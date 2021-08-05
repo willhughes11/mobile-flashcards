@@ -10,17 +10,9 @@ In the project directory, you can run:
 
 ### `yarn install`
 
-or
-
-### `npm install`
-
 Run this to install all the project dependencies
 
-### `yarn start`
-
-or
-
-### `npm start`
+### `expo start`
 
 Runs the app in the development mode.<br>
 
