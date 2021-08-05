@@ -10,6 +10,7 @@ In the project directory, you can run:
 
 ### `yarn install`
 ### `yarn add expo-permissions`
+### `yarn add expo-notifications`
 
 Run this to install all the project dependencies
 

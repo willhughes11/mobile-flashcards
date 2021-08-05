@@ -1,5 +1,5 @@
 import { AsyncStorage } from "react-native";
-import { Notifications } from "expo";
+import * as Notifications from "expo-notifications";
 import * as Permissions from "expo-permissions";
 
 const NOTIFICATION_KEY = "Flashcards_Notification";
@@ -8,11 +8,11 @@ export function clearLocalNotification() {
     return AsyncStorage.removeItem(NOTIFICATION_KEY).then(
       Notifications.cancelAllScheduledNotificationsAsync
     );
-  }
+}
   
-  function createNotification() {
+export  function createNotification() {
     return {
-      title: "Attempt One Quiz Today",
+      title: "Quiz Attempts",
       body: "Remember to Complete One Quiz Today",
       ios: {
         sound: true
