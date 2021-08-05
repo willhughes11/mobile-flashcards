@@ -4,7 +4,7 @@ import { addDeck } from '../actions/deck';
 import globalStyles from '../utils/globalStyles';
 import { textColor, white, blue } from '../utils/globalStyles';
 import {Text, View, TextInput, TouchableOpacity } from 'react-native';
-import { addDeckMapStateToProps, addDeckMapDispatchToProps } from '../utils/mapStateProps';
+// import { addDeckMapDispatchToProps } from '../utils/mapStateProps';
 
 class AddDeck extends Component {
   state = {
@@ -93,6 +93,29 @@ class AddDeck extends Component {
       </View>
     );
   }
+}
+
+function addDeckMapStateToProps(decks) {
+  return {
+    decks,
+  };
+}
+
+function addDeckMapDispatchToProps(dispatch, { navigation }) {
+  return {
+    addDeck: (title) => {
+      const deckId = title.replace(/\s/g, '');
+
+      dispatch(
+        addDeck({
+          id: deckId,
+          title: title,
+          questions: [],
+        })
+      );
+    },
+    goToDecks: () => navigation.navigate('Decks'),
+  };
 }
 
 export default connect(addDeckMapStateToProps, addDeckMapDispatchToProps)(AddDeck);

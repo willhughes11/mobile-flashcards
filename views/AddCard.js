@@ -3,7 +3,7 @@ import { addCard } from '../actions/card';
 import { connect } from 'react-redux';
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import globalStyles from '../utils/globalStyles';
-import {addCardMapDispatchToProps} from '../utils/mapStateProps';
+// import {addCardMapDispatchToProps} from '../utils/mapStateProps';
 
 class AddCard extends Component {
   state = {
@@ -89,6 +89,20 @@ class AddCard extends Component {
       </View>
     );
   }
+}
+
+export function addCardMapDispatchToProps(dispatch, { route }) {
+  return {
+    addCard: (question, answer) => {
+      const { deckId } = route.params;
+      const questionDetails = {
+        deckId,
+        question,
+        answer,
+      };
+      dispatch(addCard(questionDetails));
+    },
+  };
 }
 
 export default connect(null, addCardMapDispatchToProps)(AddCard);

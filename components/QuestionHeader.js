@@ -8,7 +8,7 @@ export default function QuestionHeader(props) {
     <View style={{ flex: 1, margin: 16, alignItems: 'center' }}>
       <View style={globalStyles.headerTextContainer}>
         <Text style={globalStyles.countText}>
-          {props.currentQuestionIndex + 1} / {props.totalQuestions}
+          {props.index + 1} / {props.totalQuestions}
         </Text>
       </View>
     </View>
@@ -16,6 +16,6 @@ export default function QuestionHeader(props) {
 }
 
 QuestionHeader.propTypes = {
-  currentQuestionIndex: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   totalQuestions: PropTypes.number.isRequired,
 };
