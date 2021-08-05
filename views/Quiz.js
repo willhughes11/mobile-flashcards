@@ -6,7 +6,7 @@ import QuestionHeader from '../components/QuestionHeader';
 import Question from '../components/Question';
 import QuestionResults from '../components/QuestionResults';
 import { quizMapStateToProps } from '../utils/mapStateProps';
-import { clearLocalNotification, setLocalNotification } from "../utils/notifications";
+// import { clearLocalNotification, setLocalNotification } from "../utils/notifications";
 
 class Quiz extends Component {
   state = {
@@ -46,9 +46,9 @@ class Quiz extends Component {
     } = this.state;
     const currQuestion = questions[index];
 
-    if(!complete){
-      clearLocalNotification().then(setLocalNotification);
-    }
+    // if(!complete){
+    //   clearLocalNotification().then(setLocalNotification);
+    // }
 
     return (
       <View style={{ flex: 1, flexDirection: 'row' }}>
