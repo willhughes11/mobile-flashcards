@@ -9,6 +9,7 @@ In the "Mobile Flash Cards" Project, you will be able to study collections of fl
 In the project directory, you can run:
 
 ### `yarn install`
+### `yarn add expo-permissions`
 
 Run this to install all the project dependencies
 
